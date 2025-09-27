@@ -1,0 +1,337 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Removed invalid @custom-variant (not a standard CSS at-rule). 
+   Use Tailwind's built-in dark variant by setting `darkMode: 'class'` in tailwind.config.js
+   or define custom variants via a PostCSS/Tailwind plugin if needed. */
+
+:root {
+  /* Updated to purple theme with #4e4376 background and light gradient #e2ebf0 */
+  --background: #e7f0fd;
+  --foreground: #1a1625;
+  --card: #f8fafc;
+  --card-foreground: #1a1625;
+  --popover: #f8fafc;
+  --popover-foreground: #1a1625;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #1a1625;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #8b5cf6;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #f1f5f9;
+  --ring: #6366f1;
+  --chart-1: #6366f1;
+  --chart-2: #8b5cf6;
+  --chart-3: #06b6d4;
+  --chart-4: #10b981;
+  --chart-5: #f59e0b;
+  --radius: 0.75rem;
+  --sidebar: #f8fafc;
+  --sidebar-foreground: #1a1625;
+  --sidebar-primary: #6366f1;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e2e8f0;
+  --sidebar-accent-foreground: #1a1625;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #6366f1;
+
+  /* Updated gradient variables for purple/indigo theme */
+  --gradient-primary: linear-gradient(135deg, #6366f1, #8b5cf6);
+  --gradient-secondary: linear-gradient(135deg, #06b6d4, #10b981);
+  --gradient-accent: linear-gradient(135deg, #f59e0b, #6366f1);
+  --gradient-background: linear-gradient(135deg, #FFFBEB 0%, #FFFBEB 100%);
+}
+
+.dark {
+  /* Updated dark mode with #4e4376 background */
+  --background: #44444E;
+  --foreground: #f8fafc;
+  --card: #5a4a7a;
+  --card-foreground: #f8fafc;
+  --popover: #5a4a7a;
+  --popover-foreground: #f8fafc;
+  --primary: #44444E;
+  --primary-foreground: #1a1625;
+  --secondary: #44444E;
+  --secondary-foreground: #f8fafc;
+  --muted: #5a4a7a;
+  --muted-foreground: #cbd5e1;
+  --accent: #44444E;
+  --accent-foreground: #1a1625;
+  --destructive: #f87171;
+  --destructive-foreground: #ffffff;
+  --border: #44444E;
+  --input: #5a4a7a;
+  --ring: #44444E;
+  --chart-1: #44444E;
+  --chart-2: #44444E;
+  --chart-3: #22d3ee;
+  --chart-4: #34d399;
+  --chart-5: #fbbf24;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --sidebar: #5a4a7a;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #44444E;
+  --sidebar-primary-foreground: #1a1625;
+  --sidebar-accent: #6b5b95;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #6b5b95;
+  --sidebar-ring: #a78bfa;
+
+  /* Enhanced gradients for dark mode with purple theme */
+  --gradient-primary: linear-gradient(135deg, #a78bfa, #c084fc);
+  --gradient-secondary: linear-gradient(135deg, #22d3ee, #34d399);
+  --gradient-accent: linear-gradient(135deg, #44444E, #a78bfa);
+  --gradient-background: radial-gradient(ellipse at center, #44444E 0%, #44444E 100%);
+}
+
+.theme-inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    border-color: var(--border);
+    outline-color: var(--ring);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    /* Added animated gradient background */
+    background: var(--gradient-background);
+    background-attachment: fixed;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    box-shadow: 0 0 0 2px var(--primary / 0.5);
+  }
+}
+
+/* Enhanced animations and responsive utilities */
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.6s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.4s ease-out;
+  }
+
+  .backdrop-blur-glass {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .stagger-animation {
+    animation-delay: calc(var(--stagger) * 0.1s);
+  }
+}
+
+@keyframes glow {
+  from {
+    /* Updated glow animation to use purple colors instead of green */
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(167, 139, 250, 0.6);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Enhanced responsive breakpoints and mobile optimizations */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .backdrop-blur-glass {
+    backdrop-filter: blur(8px);
+  }
+}
+
+@media (max-width: 768px) {
+  .animate-float {
+    animation-duration: 4s;
+  }
+}
